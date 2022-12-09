@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Physics Calculator</title>
+</head>
+<body>
+    <h1>Physics Calculator</h1>
+    <form>
+        <p>Enter the density of the air: <input type="text" id="density"></p>
+        <p>Enter the velocity of the object: <input type="text" id="velocity"></p>
+        <p>Enter the surface area of the object: <input type="text" id="area"></p>
+        <p>Enter the lift coefficient: <input type="text" id="coefficient"></p>
+        <p><input type="button" value="Calculate" onclick="calculateLift()"></p>
+        <p>The lift force is: <span id="result"></span></p>
+    </form>
+    <script>
+        function calculateLift() {
+            // Get the values of the input fields
+            var density = document.getElementById('density').value;
+            var velocity = document.getElementById('velocity').value;
+            var area = document.getElementById('area').value;
+            var coefficient = document.getElementById('coefficient').value;
+
+            // Calculate the lift force using the formula
+            var lift = 0.5 * density * velocity * velocity * area * coefficient;
+
+            // Display the result
+            document.getElementById('result').innerHTML = lift;
+        }
+    </script>
+</body>
+</html>
